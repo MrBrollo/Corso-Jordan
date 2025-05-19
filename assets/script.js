@@ -92,3 +92,45 @@ document.getElementById('registrationForm').addEventListener('submit', function 
         console.log("Dati utente (JSON):", JSON.stringify(userData, null, 2));
     }
 });
+
+const novita = [
+    {
+        img: "assets/img/expedition33.avif",
+        alt: "expedition33",
+        title: "Clair Obscur: Expedition 33",
+        text: "Scopri il celebre rpg di Sandfall Interactive che ha fatto emozionare i fan del genere!"
+    },
+    {
+        img: "assets/img/Oblivion.avif",
+        alt: "oblivion",
+        title: "The Elder Scrolls IV: Oblivion Remastered",
+        text: "Riscopri il famoso Open-World di Bethesda in questa appassionante remastered!"
+    },
+    {
+        img: "assets/img/elden_ring.jpg",
+        alt: "nightreign",
+        title: "Elden Ring Nightreign",
+        text: "Hai il coraggio di mettere alla prova le tue capacità nel nuovo DLC di Elden Ring?"
+    },
+    {
+        img: "assets/img/mh_wilds.png",
+        alt: "mh_wilds",
+        title: "Monster Hunter: Wilds",
+        text: "Armati di coraggio (e di armi decisamente smisurate!) e vai a caccia di mostri nell'ultimo capitolo della celebre serie di Capcom!"
+    }
+];
+
+const container = document.getElementById('novita-container');
+for (const gioco of novita) {
+    container.innerHTML += `
+      <div class="col-12 col-md-6">
+        <div class="card text-dark h-100">
+          <img src="${gioco.img}" class="card-img-top" alt="${gioco.alt}">
+          <div class="card-body">
+            <h5 class="card-title">${gioco.title}</h5>
+            <p class="card-text">${gioco.text}</p>
+          </div>
+        </div>
+      </div>
+    `;
+}
