@@ -140,6 +140,26 @@ form {
     border-radius: 5px;
 }
 
+#carouselExampleIndicators {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carousel-inner {
+    max-height: 400px;
+    /*altezza massima del carosello */
+    overflow: hidden;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    /* ritaglia le immagini senza deformarle */
+    height: 400px;
+    /* tutte le immagini stessa altezza */
+    width: 100%;
+    /* larghezza responsiva */
+}
+
 .radioGroup {
     display: flex;
     flex-direction: column;
@@ -313,6 +333,14 @@ form {
         max-width: 90%;
         padding: 10px;
     }
+
+    .carousel-inner {
+        max-height: 300px;
+    }
+
+    .carousel-item img {
+        height: 300px;
+    }
 }
 
 /*mobile */
@@ -347,5 +375,13 @@ form {
     form {
         max-width: 100%;
         padding: 5px;
+    }
+
+    .carousel-inner {
+        max-height: 200px;
+    }
+
+    .carousel-item img {
+        height: 200px;
     }
 }
