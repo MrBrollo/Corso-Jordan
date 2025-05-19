@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Corso Jordan</title>
+</head>
+<body>
+<div class="header">
+    <nav class="navbar">
+        <a href="index.html">Home</a></li>
+        <a href="#chiSiamo">Chi siamo</a></li>
+        <a href="#valutiamoUsato">Valutiamo il tuo usato</a></li>
+        <a href="#orari">Orari</a></li>
+        <button id="darkModeToggle"><i class='bx bxs-moon' ></i></button>
+    </nav>
+</div>
+<h1>VideoGames Heaven</h1>
+<img src="assets/img/videogame.jpg" alt="videogame">
+<hr>
+<h2>Chi siamo</h2>
+<div class="container" id="chiSiamo">
+    <p>Da noi troverai un'ampia selezione di videogiochi, console e accessori per soddisfare ogni tua esigenza. 
+        Che tu sia un appassionato di giochi d'azione, avventura, sport o strategia, abbiamo qualcosa per te!</p>
+</div>
+<h2>Valutiamo il tuo usato</h2>
+<div class="container" id="valutiamoUsato">
+    <p>Hai un videogioco usato che non usi più? Non buttarlo! Porta da noi il tuo usato 
+        e ricevi un buono sconto per il tuo prossimo acquisto!</p>
+</div>
+<h2>Località e orari di apertura</h2>
+<div class="container" id="orari">
+    <p>Ci troviamo in Via Roma 123, Roma, Lazio, Italia.</p>
+    <p>Orari di apertura:</p>
+    <ul>
+        <li>Lunedì a Venerdì: dalle 9:00 alle 20:00</li>
+        <li>Sabato: dalle 10:00 alle 18:00</li>
+    </ul>
+</div>
+<h2>Non perderti le nostre novità e offerte!<br>Registrati alla nostra newsletter!</h2>
+<form action="#" method="POST" id="registrationForm">
+    <label for="name" id="labelText">Nome Utente:</label>
+    <input type="text" id="username" name="name" placeholder="Inserisci il nome qui..."><br>
+    <label for="email" id="labelText">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Inserisci l'email qui..."><br>
+    <label for="password" id="labelText">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Inserisci la password qui..."><br>
+    <label for="birthDate" id="labelText">Data di Nascita:</label>
+    <input type="date" id="birthDate" name="birthDate"><br>
+    <label for="phoneNumber" id="labelText">Numero di Telefono:</label>
+    <input type="tel" id="phone" name="phoneNumber" inputmode="numeric" pattern="[0-9]{10}"><br>
+    <label for="gender" id="labelText">Gender</label>
+    <div class="radioGroup">
+        <div class="radioOption">
+            <input type="radio" id="inputRadioMale" name="gender" value="male" checked>
+            <span>Maschio</span>
+        </div>
+        <div class="radioOption">
+                <input type="radio" id="inputRadioFemale" name="gender" value="female">
+                <span id="MaschioRadio">Femmina</span>
+        </div>
+        <div class="radioOption">
+            <input type="radio" id="inputRadioOthers" name="gender" value="others">
+            <span>Altro</span>
+        </div>
+        <div class="radioOption">
+            <input type="radio" id="inputRadioNoAnswer" name="gender" value="noAnswer">
+            <span>Preferisco non rispondere</span>
+        </div>
+    </div>
+    <div class="checkboxGroup">
+        <div class="checkboxOptionNews">
+            <input type="checkbox" id="inputCheckboxNews" name="newsletter" value="yes">
+            <label for="newsletter">Desidero ricevere la newsletter</label><br>
+        </div>  
+        <div class="checkboxOptionTerms">
+                <input type="checkbox" id="inputCheckboxTerms" name="terms" value="yes">
+            <label for="terms">Accetto i termini e le condizioni</label>   
+        </div><br>
+        <input type="submit" id="submitButton" value="Iscriviti">
+    </div>
+</form>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

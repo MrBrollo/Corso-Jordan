@@ -1,0 +1,345 @@
+:root {
+    --lightmode-theme: burlywood;
+    --darkmode-theme: #B39DDB;
+    --background-container: rgb(159, 188, 214);
+    font-size: 16px;
+}
+
+body {
+    background: url('assets/img/videogame_2.jpg') no-repeat center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    transition: background 0.5s ease-in-out;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #1e1e2f;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #8ab4f8;
+        border-radius: 10px;
+        border: 2px solid #1e1e2f;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #a0c8ff;
+    }
+}
+
+.header {
+    background-color: rgba(159, 188, 214, 0.8);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+}
+
+a {
+    color: var(--lightmode-theme);
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+    padding: 10px;
+
+    &:hover {
+        color: #cc8a34;
+        transition: color 0.3s ease;
+    }
+}
+
+h1 {
+    color: var(--lightmode-theme);
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+h2 {
+    color: var(--lightmode-theme);
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-container);
+    opacity: calc(0.8);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: 0 auto 15px auto;
+    width: 300px;
+    height: 300px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: var(--background-container);
+    opacity: calc(0.9);
+}
+
+#labelText {
+    color: var(--lightmode-theme);
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#username,
+#email,
+#password,
+#birthDate,
+#phone {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+}
+
+.radioGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .radioOption {
+        margin-right: 10px;
+        transform: scale(1.2);
+        accent-color: #da680b;
+    }
+
+}
+
+.checkboxGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+
+    .checkboxOptionNews input,
+    .checkboxOptionTerms input[type="checkbox"] {
+        accent-color: #eb7311;
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+
+        .checkboxOptionNews,
+        .checkboxOptionTerms {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .checkboxOptionNews,
+        .checkboxOptionTerms {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    }
+}
+
+.checkboxOptionNews,
+.checkboxOptionTerms label {
+    font-size: 1.2rem;
+    color: #000000;
+}
+
+#submitButton {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--lightmode-theme);
+
+    &:hover {
+        background-color: #cc8a34;
+        transition: background-color 0.3s ease;
+    }
+}
+
+#darkModeToggle {
+    margin-left: auto;
+    padding: 0.5rem 1rem;
+    background-color: var(--lightmode-theme);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+
+    &:hover {
+        background-color: #cc8a34;
+        transition: background-color 0.3s ease;
+    }
+}
+
+/* Dark Mode Styles */
+
+.dark-mode {
+    background: url('assets/img/videogame_night.jpg') no-repeat center fixed;
+    background-size: cover;
+
+    a {
+        color: var(--darkmode-theme);
+
+
+        &:hover {
+            color: #c51f85;
+            transition: color 0.3s ease;
+        }
+    }
+
+    h1 {
+        color: var(--darkmode-theme);
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    h2 {
+        color: var(--darkmode-theme);
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    #labelText {
+        color: var(--darkmode-theme);
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    .radioOption {
+        accent-color: var(--darkmode-theme);
+    }
+
+    .checkboxOptionNews input,
+    .checkboxOptionTerms input[type="checkbox"] {
+        accent-color: var(--darkmode-theme);
+    }
+
+    #submitButton {
+        background-color: var(--darkmode-theme);
+
+        &:hover {
+            background-color: #c51f85;
+            transition: background-color 0.3s ease;
+        }
+    }
+
+    #darkModeToggle {
+        background-color: var(--darkmode-theme);
+
+        &:hover {
+            background-color: #c51f85;
+        }
+    }
+}
+
+/*tablet */
+
+@media (max-width: 768px) {
+    body {
+        background: url('assets/img/videogame_2.jpg') no-repeat center fixed;
+        background-size: cover;
+    }
+
+    .header {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+    }
+
+    form {
+        max-width: 90%;
+        padding: 10px;
+    }
+}
+
+/*mobile */
+
+@media (max-width: 480px) {
+    body {
+        background: url('assets/img/videogame_2.jpg') no-repeat center fixed;
+        background-size: cover;
+    }
+
+    .header {
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+    }
+
+    form {
+        max-width: 100%;
+        padding: 5px;
+    }
+}
