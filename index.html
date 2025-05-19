@@ -5,41 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel ="stylesheet" href ="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <title>Corso Jordan</title>
 </head>
 <body>
 <div class="header">
     <nav class="navbar">
-        <a href="index.html">Home</a></li>
-        <a href="#chiSiamo">Chi siamo</a></li>
-        <a href="#valutiamoUsato">Valutiamo il tuo usato</a></li>
-        <a href="#orari">Orari</a></li>
+        <a id="indexBtn" href="index.html">Home</a></li>
+        <a id="whoBtn" href="#chiSiamo">Chi siamo</a></li>
+        <a id="usatoBtn" href="#valutiamoUsato">Valutiamo il tuo usato</a></li>
+        <a id="orariBtn" href="#orari">Orari</a></li>
         <button id="darkModeToggle"><i class='bx bxs-moon' ></i></button>
     </nav>
 </div>
-<h1>VideoGames Heaven</h1>
+<h1 class="logo">VideoGames Heaven</h1>
 <img src="assets/img/videogame.jpg" alt="videogame">
 <hr>
-<h2>Chi siamo</h2>
+<h2 class="secondari">Chi siamo</h2>
 <div class="container" id="chiSiamo">
-    <p>Da noi troverai un'ampia selezione di videogiochi, console e accessori per soddisfare ogni tua esigenza. 
+    <p class="testo">Da noi troverai un'ampia selezione di videogiochi, console e accessori per soddisfare ogni tua esigenza. 
         Che tu sia un appassionato di giochi d'azione, avventura, sport o strategia, abbiamo qualcosa per te!</p>
 </div>
-<h2>Valutiamo il tuo usato</h2>
+<h2 class="secondari">Valutiamo il tuo usato</h2>
 <div class="container" id="valutiamoUsato">
-    <p>Hai un videogioco usato che non usi più? Non buttarlo! Porta da noi il tuo usato 
+    <p class="testo">Hai un videogioco usato che non usi più? Non buttarlo! Porta da noi il tuo usato 
         e ricevi un buono sconto per il tuo prossimo acquisto!</p>
 </div>
-<h2>Località e orari di apertura</h2>
+<h2 class="secondari">Località e orari di apertura</h2>
 <div class="container" id="orari">
-    <p>Ci troviamo in Via Roma 123, Roma, Lazio, Italia.</p>
-    <p>Orari di apertura:</p>
+    <p class="testo">Ci troviamo in Via Roma 123, Roma, Lazio, Italia.</p>
+    <p class="testo">Orari di apertura:</p>
     <ul>
         <li>Lunedì a Venerdì: dalle 9:00 alle 20:00</li>
         <li>Sabato: dalle 10:00 alle 18:00</li>
     </ul>
 </div>
-<h2>Non perderti le nostre novità e offerte!<br>Registrati alla nostra newsletter!</h2>
+<h2 class="secondari">Non perderti le nostre novità e offerte!<br>Registrati alla nostra newsletter!</h2>
 <form action="#" method="POST" id="registrationForm">
     <label for="name" id="labelText">Nome Utente:</label>
     <input type="text" id="username" name="name" placeholder="Inserisci il nome qui..."><br>
@@ -71,14 +72,11 @@
         </div>
     </div>
     <div class="checkboxGroup">
-        <div class="checkboxOptionNews">
-            <input type="checkbox" id="inputCheckboxNews" name="newsletter" value="yes">
+        <div class="checkboxOption">
+            <input class="newsletterOption" type="checkbox" id="inputCheckboxNews" name="newsletter" value="yes">
             <label for="newsletter">Desidero ricevere la newsletter</label><br>
-        </div>  
-        <div class="checkboxOptionTerms">
-                <input type="checkbox" id="inputCheckboxTerms" name="terms" value="yes">
-            <label for="terms">Accetto i termini e le condizioni</label>   
-        </div><br>
+            <input class="newsletterOption" type="checkbox" id="inputCheckboxTerms" name="terms" value="yes">
+            <label for="terms">Accetto i termini e le condizioni</label>
         <input type="submit" id="submitButton" value="Iscriviti">
     </div>
 </form>

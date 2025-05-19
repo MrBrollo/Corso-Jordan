@@ -1,5 +1,5 @@
 :root {
-    --lightmode-theme: burlywood;
+    --lightmode-theme: #deb887;
     --darkmode-theme: #B39DDB;
     --background-container: rgb(159, 188, 214);
     font-size: 16px;
@@ -44,7 +44,10 @@ body {
     }
 }
 
-a {
+#indexBtn,
+#whoBtn,
+#usatoBtn,
+#orariBtn {
     color: var(--lightmode-theme);
     text-decoration: none;
     font-size: 1.25rem;
@@ -58,14 +61,16 @@ a {
     }
 }
 
-h1 {
+.logo {
     color: var(--lightmode-theme);
     font-size: 3rem;
     text-align: center;
     text-shadow: 2px 2px 4px #000000;
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 
-h2 {
+.secondari {
     color: var(--lightmode-theme);
     font-size: 2rem;
     text-align: center;
@@ -83,10 +88,10 @@ h2 {
     padding: 30px;
     max-width: 600px;
     width: 100%;
-    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
-p {
+.testo {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: italic;
     color: black;
@@ -155,23 +160,20 @@ form {
     justify-content: center;
     margin-top: 2rem;
 
-    .checkboxOptionNews input,
-    .checkboxOptionTerms input[type="checkbox"] {
+    .checkboxOption input[type="checkbox"] {
         accent-color: #eb7311;
         width: 18px;
         height: 18px;
         margin-right: 10px;
 
-        .checkboxOptionNews,
-        .checkboxOptionTerms {
+        .checkboxOption {
             display: flex;
             align-items: center;
             cursor: pointer;
             margin-top: 15px;
         }
 
-        .checkboxOptionNews,
-        .checkboxOptionTerms {
+        .checkboxOption {
             display: flex;
             align-items: center;
             cursor: pointer;
@@ -180,13 +182,14 @@ form {
     }
 }
 
-.checkboxOptionNews,
-.checkboxOptionTerms label {
+.checkboxOption label {
     font-size: 1.2rem;
     color: #000000;
 }
 
 #submitButton {
+    display: block;
+    margin: 20px auto;
     font-size: 1.5rem;
     padding: 10px 20px;
     border: none;
@@ -222,7 +225,10 @@ form {
     background: url('assets/img/videogame_night.jpg') no-repeat center fixed;
     background-size: cover;
 
-    a {
+    #indexBtn,
+    #whoBtn,
+    #usatoBtn,
+    #orariBtn {
         color: var(--darkmode-theme);
 
 
