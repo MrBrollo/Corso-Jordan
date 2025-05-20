@@ -124,7 +124,7 @@ const novita = [
 const container = document.getElementById('novita-container');
 for (const gioco of novita) {
     container.innerHTML += `
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-lg-3 col-md-6">
         <div class="card text-dark h-100">
           <img src="${gioco.img}" class="card-img-top" alt="${gioco.alt}">
           <div class="card-body">
