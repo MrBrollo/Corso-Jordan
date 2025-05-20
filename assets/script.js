@@ -93,6 +93,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     }
 });
 
+// Ciclo for per ottimizzare il codice
 const novita = [
     {
         img: "assets/img/expedition33.avif",
