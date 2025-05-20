@@ -93,8 +93,8 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     }
 });
 
-// Ciclo for per ottimizzare il codice
-const novita = [
+
+const giochi = [
     {
         img: "assets/img/expedition33.avif",
         alt: "expedition33",
@@ -118,20 +118,56 @@ const novita = [
         alt: "mh_wilds",
         title: "Monster Hunter: Wilds",
         text: "Armati di coraggio (e di armi decisamente smisurate!) e vai a caccia di mostri nell'ultimo capitolo della celebre serie di Capcom!"
+    },
+    {
+        img: "assets/img/horizon.avif",
+        alt: "horizon",
+        title: "Horizon Zero Dawn: Complete Edition",
+        text: "Riscopri il mondo post-apocalittico di Horizon Zero Dawn in questa edizione completa!"
+    },
+    {
+        img: "assets/img/mario_kart.avif",
+        alt: "mario_kart",
+        title: "Mario Kart World",
+        text: "Preparati a gareggiare contro i tuoi amici nel nuovo capitolo di Mario Kart!"
+    },
+    {
+        img: "assets/img/hollow_knight.jpg",
+        alt: "hollow_knight",
+        title: "Hollow Knight: Silksong",
+        text: "Scopri il sequel del celebre platform metroidvania in arrivo su tutte le piattaforme!"
+    },
+    {
+        img: "assets/img/doom.avif",
+        alt: "doom",
+        title: "Doom: The Dark Ages",
+        text: "Scopri le origini del leggendario Doom Slayer nel nuovo capitolo della saga!"
     }
 ];
 
-const container = document.getElementById('novita-container');
-for (const gioco of novita) {
-    container.innerHTML += `
-      <div class="col-12 col-lg-3 col-md-6">
-        <div class="card text-dark h-100">
-          <img src="${gioco.img}" class="card-img-top" alt="${gioco.alt}">
-          <div class="card-body">
-            <h5 class="card-title">${gioco.title}</h5>
-            <p class="card-text">${gioco.text}</p>
-          </div>
-        </div>
-      </div>
-    `;
-}
+$(function () {
+    const $carouselInner = $('#carousel-inner-novita');
+    for (let i = 0; i < giochi.length; i += 4) {
+        const active = i === 0 ? 'active' : '';
+        const $slide = $('<div>').addClass(`carousel-item ${active}`);
+        const $row = $('<div>').addClass('row g-4');
+
+        giochi.slice(i, i + 4).forEach(gioco => {
+            const $col = $(`
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card text-dark h-100">
+                    <img src="${gioco.img}" class="card-img-top" alt="${gioco.alt}">
+                        <div class="card-body">
+                            <h5 class="card-title">${gioco.title}</h5>
+                            <p class="card-text">${gioco.text}</p>
+                        </div>
+                </div>
+            </div>
+            `);
+            $row.append($col);
+        });
+
+        $slide.append($row);
+        $carouselInner.append($slide);
+    }
+});
