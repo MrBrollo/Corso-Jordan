@@ -243,10 +243,7 @@ form {
     background: url('assets/img/videogame_night.jpg') no-repeat center fixed;
     background-size: cover;
 
-    #indexBtn,
-    #whoBtn,
-    #usatoBtn,
-    #orariBtn {
+    .navElement {
         color: var(--darkmode-theme);
 
 
