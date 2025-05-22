@@ -10,13 +10,22 @@
     <title>Corso Jordan</title>
 </head>
 <body>
-<div class="header">
-    <nav class="navbar">
-        <a class="navElement" href="index.html">Home</a>
-        <a class="navElement" href="#chiSiamo">Chi siamo</a>
-        <a class="navElement" href="#valutiamoUsato">Valutiamo il tuo usato</a>
-        <a class="navElement" href="#orari">Orari</a>
-        <button id="darkModeToggle"><i class='bx bxs-moon' ></i></button>
+<div class="header fixed-top" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="navElement" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="navElement" href="#chiSiamo">Chi siamo</a></li>
+                    <li class="nav-item"><a class="navElement" href="#valutiamoUsato">Valutiamo il tuo usato</a></li>
+                    <li class="nav-item"><a class="navElement" href="#orari">Orari</a></li>
+                </ul>
+                <button id="darkModeToggle" class="btn btn-outline-light"><i class='bx bxs-moon'></i></button>
+            </div>
+        </div>
     </nav>
 </div>
 <h1 class="logo">VideoGames Heaven</h1>
