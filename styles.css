@@ -35,15 +35,11 @@ body {
     padding: 20px;
     text-align: center;
     transition: all 0.3s ease-in-out;
-    /* Add smooth transition for all properties */
 }
 
-/* New class for scrolled state */
 .header.scrolled {
     background-color: rgba(33, 37, 41, 0.95);
-    /* Darker background when scrolled */
     padding: 15px;
-    /* Slightly reduced padding */
 }
 
 .navElement {

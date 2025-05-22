@@ -4,24 +4,24 @@ const navbar = document.getElementById("navbar");
 window.addEventListener("scroll", function () {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Add/remove scrolled class based on scroll position
-    if (scrollTop > 50) { // Start changing color after scrolling 50px
+    //
+    if (scrollTop > 50) { // Cambia colore dopo 50px di scroll
         navbar.classList.add("scrolled");
     } else {
         navbar.classList.remove("scrolled");
     }
 
     if (scrollTop > lastScrollTop && scrollTop > 100) {
-        // Scrolling down: hide navbar with fade effect
+        // Nasconde la navbar quando si scorre verso il basso
         navbar.style.transform = "translateY(-100%)";
         navbar.style.opacity = "0";
     } else {
-        // Scrolling up: show navbar with fade effect
+        // Mostra la navbar quando si scorre verso l'alto
         navbar.style.transform = "translateY(0)";
         navbar.style.opacity = "1";
     }
 
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Avoid negative values
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // I valori negativi non sono validi
 });
 
 // Visualizza la data odierna e impedisce la selezione di date future
