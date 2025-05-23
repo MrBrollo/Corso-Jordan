@@ -163,7 +163,7 @@ form {
     /* larghezza responsiva */
 }
 
-*/ .radioGroup {
+.radioGroup {
     display: flex;
     flex-direction: column;
     gap: 8px;
