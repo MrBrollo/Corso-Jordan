@@ -1,0 +1,50 @@
+[
+    {
+        "img": "assets/img/expedition33.avif",
+        "alt": "expedition33",
+        "title": "Clair Obscur: Expedition 33",
+        "text": "Scopri il celebre rpg di Sandfall Interactive che ha fatto emozionare i fan del genere!"
+    },
+    {
+        "img": "assets/img/Oblivion.avif",
+        "alt": "oblivion",
+        "title": "The Elder Scrolls IV: Oblivion Remastered",
+        "text": "Riscopri il famoso Open-World di Bethesda in questa appassionante remastered!"
+    },
+    {
+        "img": "assets/img/elden_ring.jpg",
+        "alt": "nightreign",
+        "title": "Elden Ring Nightreign",
+        "text": "Hai il coraggio di mettere alla prova le tue capacità nel nuovo DLC di Elden Ring?"
+    },
+    {
+        "img": "assets/img/mh_wilds.png",
+        "alt": "mh_wilds",
+        "title": "Monster Hunter: Wilds",
+        "text": "Armati di coraggio (e di armi decisamente smisurate!) e vai a caccia di mostri nell'ultimo capitolo della celebre serie di Capcom!"
+    },
+    {
+        "img": "assets/img/horizon.avif",
+        "alt": "horizon",
+        "title": "Horizon Zero Dawn: Complete Edition",
+        "text": "Riscopri il mondo post-apocalittico di Horizon Zero Dawn in questa edizione completa!"
+    },
+    {
+        "img": "assets/img/mario_kart.avif",
+        "alt": "mario_kart",
+        "title": "Mario Kart World",
+        "text": "Preparati a gareggiare contro i tuoi amici nel nuovo capitolo di Mario Kart!"
+    },
+    {
+        "img": "assets/img/hollow_knight.jpg",
+        "alt": "hollow_knight",
+        "title": "Hollow Knight: Silksong",
+        "text": "Scopri il sequel del celebre platform metroidvania in arrivo su tutte le piattaforme!"
+    },
+    {
+        "img": "assets/img/doom.avif",
+        "alt": "doom",
+        "title": "Doom: The Dark Ages",
+        "text": "Scopri le origini del leggendario Doom Slayer nel nuovo capitolo della saga!"
+    }
+]
