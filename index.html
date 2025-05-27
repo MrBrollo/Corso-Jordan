@@ -6,10 +6,60 @@
     <link rel="stylesheet" href="styles.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel ="stylesheet" href ="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <title>Corso Jordan</title>
 </head>
 <body>
+
+<div id="cookie-banner" class="retro-banner">
+  <div class="banner-content">
+    <p class="banner-text">
+      <i class='bx bxs-cookie'></i>Questo sito usa i cookie per offrirti la migliore esperienza possibile.
+    </p>
+    <div class="banner-buttons">
+      <button id="accept-all" class="retro-btn">Accetta tutti</button>
+      <button id="open-settings" class="retro-btn">Impostazioni cookie</button>
+    </div>
+  </div>
+</div>
+
+<!-- Finestra Impostazioni -->
+<div id="cookie-settings" class="retro-modal">
+  <div class="retro-modal-content">
+    <h3 class="retro-title">Impostazioni cookie</h3>
+
+    <div class="cookie-option">
+      <label>
+        <input type="checkbox" checked disabled>
+        Cookie Necessari (obbligatori)
+      </label>
+    </div>
+
+    <div class="cookie-option">
+      <label>
+        <input type="checkbox" id="analytics-cookies">
+        Cookie Analitici
+      </label>
+    </div>
+
+    <div class="cookie-option">
+      <label>
+        <input type="checkbox" id="marketing-cookies">
+        Cookie di Marketing
+      </label>
+    </div>
+
+    <div class="banner-buttons">
+      <button id="save-settings" class="retro-btn">Salva scelte</button>
+      <button id="close-settings" class="retro-btn danger">Annulla</button>
+    </div>
+  </div>
+</div>
+
+<!-- Pulsante riapertura impostazioni -->
+<button id="reopen-settings" class="retro-btn reopen-btn"><i class='bx bxs-cog'></i>  Cookie</button>
+
 <div class="header fixed-top" id="navbar">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
@@ -29,7 +79,7 @@
     </nav>
 </div>
 <h1 class="logo">VideoGames Heaven</h1>
-<img src="assets/img/videogame.jpg" alt="videogame">
+<img src="assets/img/videogame.jpg" alt="videogame" id="logoImage">
 
 <h2 class="text-center secondari">Dai un'occhiata alle novità!</h2>
 
@@ -136,7 +186,7 @@
         <input type="submit" id="submitButton" value="Iscriviti">
         </div>
     </div>
-  </form>
+</form>
 
 <footer class="footer text-center text-light py-4 pixel-footer">
   <div class="container">
@@ -147,6 +197,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+<script src="assets/cookieHandler.js"></script>
 <script src="assets/script.js"></script>
 <script src="assets/carousel.js"></script>
 </body>

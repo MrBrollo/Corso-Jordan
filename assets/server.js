@@ -6,7 +6,7 @@ const port = 3000; //porta per il server di sviluppo creato da node.js
 // prendo i contenuti statici del sito
 app.use(express.static(path.join(__dirname)));
 
-// chiamata di get di esempio
+// chiamata di get
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
