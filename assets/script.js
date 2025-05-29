@@ -50,8 +50,9 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     const password = document.getElementById('password').value;
     const birthDate = document.getElementById('birthDate').value;
     const phone = document.getElementById('phone').value.trim();
-    const gender = document.querySelector('input[name="gender"]:checked');
+    const genderInput = document.querySelector('input[name="gender"]:checked');
     const termsAccepted = document.getElementById('inputCheckboxTerms').checked;
+    const newsletter = document.getElementById('inputCheckboxNews').checked;
 
     // Gestione errori
     if (username === '') {
@@ -91,7 +92,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
         errors.push("Il numero di telefono deve contenere esattamente 10 cifre.");
     }
 
-    if (!gender) {
+    if (!genderInput) {
         errors.push("Seleziona un'opzione per il genere.");
     }
 
@@ -113,8 +114,26 @@ document.getElementById('registrationForm').addEventListener('submit', function 
             numeroTelefono: phone,
             genere: genderInput.value,
             newsletter: newsletter ? "sì" : "no",
-            terminiAccettati: true
+            terms: termsAccepted
         };
-        console.log("Dati utente (JSON):", JSON.stringify(userData, null, 2));
+
+        //invia i dati al server
+        fetch("http://localhost:3000/register", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                console.log('Risposta server:', data);
+            })
+            .catch(error => {
+                console.error('Errore nella fetch:', error);
+            });
+
     }
+
 });

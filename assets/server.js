@@ -1,39 +1,77 @@
-// const express = require("express"); //importo la libreria in pagina
-// const path = require("path");
-// const app = express(); //la libreria viene inizializzata
-// const port = 3000; //porta per il server di sviluppo creato da node.js
+const express = require('express'); //importo la libreria in pagina
+const bodyParser = require('body-parser');
+const path = require('path');
+const { Pool } = require('pg');
+const cors = require('cors');
 
-// // prendo i contenuti statici del sito
-// app.use(express.static(path.join(__dirname)));
 
-// // chiamata di get
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'index.html'));
-// });
+const app = express();
+const port = 3000;
 
-// app.listen(port, () => {
-//     console.log(`Server in esecuzione su http://localhost:${port}`);
-// }) 
+//Configuro la connessione a PostgreSQL
 
-//carico la libreria
-const PG = require('pg');
-
-//file di configurazione del database
-require('dotenv').config();
-
-const client = new PG.Client({
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    database: process.env.DB_NAME
+const pool = new Pool({
+    user: 'postgres',
+    host: 'localhost',
+    database: 'demoDB',
+    password: 'admin',
+    port: 5432,
 });
 
-client
-    .connect()
-    .then(() => {
-        console.log("Sei connesso al DB!");
-    })
-    .catch((err) => {
-        console.log("Errore: " + err);
-    })
+//Middleware
+app.use(cors());
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// Static file serving
+app.use('/assets', express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, '..')));
+
+//Prendo index.html dalla root
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'index.html'));
+});
+
+//Gestione POST del form
+
+app.post('/register', async (req, res) => {
+    const {
+        nomeUtente,
+        email,
+        password,
+        dataNascita,
+        numeroTelefono,
+        genere,
+        newsletter,
+        terms
+    } = req.body;
+
+    try {
+        const query = `
+        INSERT INTO "RegistrationForm"
+        (nome_utente, email, password, birth_date, phone_number, genere, newsletter, termini)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+        `;
+        const values = [
+            nomeUtente,
+            email,
+            password,
+            dataNascita,
+            numeroTelefono,
+            genere,
+            newsletter === "sì",
+            terms === true
+        ];
+
+        await pool.query(query, values)
+        res.status(200).json({ message: 'Utente registrato con successo!' });
+    } catch (error) {
+        console.error("Errore durante l'inserimento: ", error);
+        res.status(500).json('Errore nella registrazione');
+    }
+});
+
+app.listen(3000, () => {
+    console.log('Server avviato sulla porta 3000');
+});
