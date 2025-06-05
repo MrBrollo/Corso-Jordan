@@ -58,8 +58,8 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     if (username === '') {
         errors.push("Il campo Nome Utente è obbligatorio.");
     } else {
-        const usernameRegex = /^[a-zA-Z0-9]{3,}$/;
-        if (!usernameRegex.test(username)) {
+        const usernameRegex = /^[a-zA-Z0-9 ]{3,}$/;
+        if (!usernameRegex.test(username) || username.replace(/\s/g, '').length < 3) {
             errors.push("Il nome utente deve contenere almeno 3 caratteri");
         }
     }
@@ -125,10 +125,15 @@ document.getElementById('registrationForm').addEventListener('submit', function 
             },
             body: JSON.stringify(userData)
         })
-            .then(response => response.json())
-            .then(data => {
-                alert(data.message);
-                console.log('Risposta server:', data);
+            .then(response => response.json().then(data => ({ status: response.status, body: data })))
+            .then(({ status, body }) => {
+                if (status === 200) {
+                    alert(body.message);
+                } else if (status === 400 && body.error === "Email già registrata") {
+                    alert("Questa email risulta già registrata. Per favore, utilizzane un'altra.")
+                } else {
+                    alert("Errore nella registrazione.")
+                }
             })
             .catch(error => {
                 console.error('Errore nella fetch:', error);
@@ -136,4 +141,44 @@ document.getElementById('registrationForm').addEventListener('submit', function 
 
     }
 
+});
+
+$(document).ready(function () {
+    $('#usersTable').DataTable({
+        ajax: {
+            url: 'http://localhost:3000/utenti',
+            dataSrc: 'data'
+        },
+        columns: [
+            { data: 'nome_utente' },
+            { data: 'email' },
+            {
+                data: 'birth_date',
+                render: function (data, type, row) {
+                    if (!data) return '';
+                    const dateObj = new Date(data);
+                    const day = String(dateObj.getDate()).padStart(2, '0');
+                    const month = String(dateObj.getMonth() + 1).padStart(2, '0'); // Mese da 0 a 11
+                    const year = dateObj.getFullYear();
+                    return `${day}/${month}/${year}`;
+                }
+            },
+            { data: 'phone_number' },
+            { data: 'genere' }
+        ],
+        language: {
+            search: "Cerca:",
+            lengthMenu: "Mostra _MENU_ record per pagina",
+            info: "Mostra pagina _PAGE_ di _PAGES_",
+            paginate: {
+                first: "Prima",
+                last: "Ultima",
+                next: "Successiva",
+                previous: "Precedente"
+            },
+            zeroRecords: "Nessun record trovato",
+            infoEmpty: "Nessun dato disponibile",
+            infoFiltered: "(filtrato da _MAX_ record totali)"
+        }
+    });
 });

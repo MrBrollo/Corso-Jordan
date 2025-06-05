@@ -33,6 +33,19 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
+app.get('/utenti', async (req, res) => {
+    try {
+        const result = await pool.query(`
+            SELECT nome_utente, email, birth_date, phone_number, genere
+            FROM "RegistrationForm"
+        `);
+        res.status(200).json({ data: result.rows });
+    } catch (error) {
+        console.error("Errore nel recupero degli utenti:", error);
+        res.status(500).json({ error: "Errore durante il recupero dei dati" });
+    }
+});
+
 //Gestione POST del form
 
 app.post('/register', async (req, res) => {
@@ -49,7 +62,16 @@ app.post('/register', async (req, res) => {
     } = req.body;
 
     try {
-        // queery per inserimento dei dati nella tabella
+        const emailCheck = await pool.query(
+            `SELECT * FROM "RegistrationForm" WHERE email = $1`,
+            [email]
+        );
+
+        if (emailCheck.rows.length > 0) {
+            return res.status(400).json({ error: "Email già registrata" });
+        }
+
+        // query per inserimento dei dati nella tabella
         const query = `
         INSERT INTO "RegistrationForm"
         (nome_utente, email, password, birth_date, phone_number, genere, newsletter, termini)

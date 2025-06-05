@@ -56,15 +56,6 @@ body {
     }
 }
 
-.logo {
-    color: var(--lightmode-theme);
-    font-size: 3rem;
-    text-align: center;
-    text-shadow: 2px 2px 4px #000000;
-    margin-top: 150px;
-    margin-bottom: 20px;
-}
-
 .secondari {
     color: var(--lightmode-theme);
     font-size: 2rem;
@@ -96,13 +87,22 @@ body {
     text-align: center;
 }
 
+span.dt-column-title {
+    color: #000;
+    font-weight: bold;
+}
+
 img {
     display: block;
     margin: 0 auto 30px auto;
     width: 300px;
     height: 300px;
-    border: 2px solid #000000;
-    border-radius: 5px;
+}
+
+#logoImage {
+    margin-top: 130px;
+    width: 400px;
+    height: 400px;
 }
 
 form {
@@ -386,6 +386,12 @@ form {
     color: #000;
 }
 
+th {
+    background-color: var(--lightmode-theme) !important;
+}
+
+
+
 /* Dark Mode Styles */
 
 .dark-mode {
@@ -441,6 +447,10 @@ form {
         &:hover {
             background-color: #c51f85;
         }
+    }
+
+    th {
+        background-color: var(--darkmode-theme) !important;
     }
 }
 
