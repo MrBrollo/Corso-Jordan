@@ -61,6 +61,7 @@ body {
     font-size: 2rem;
     text-align: center;
     text-shadow: 2px 2px 4px #000000;
+    margin-top: 30px;
 }
 
 #chiSiamo,
@@ -104,6 +105,178 @@ img {
     width: 400px;
     height: 400px;
 }
+
+/*CSS per animare il cabinato arcade*/
+
+.arcade3d-wrapper {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.arcade3d-machine {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(20deg) rotateY(25deg);
+    animation: arcade3d-spin 10s linear infinite;
+}
+
+.arcade3d-face {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    background: #111;
+    border: 3px solid #ff004d;
+    box-shadow: 0 0 10px #ff004d66;
+    opacity: 0.95;
+}
+
+.arcade3d-front {
+    transform: translateZ(100px);
+}
+
+.arcade3d-back {
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+.arcade3d-left {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.arcade3d-right {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.arcade3d-top {
+    transform: rotateX(90deg) translateZ(150px);
+    height: 200px;
+}
+
+.arcade3d-bottom {
+    transform: rotateX(-90deg) translateZ(150px);
+    height: 200px;
+}
+
+.arcade3d-screen {
+    width: 160px;
+    height: 120px;
+    background: black;
+    margin: 20px auto 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px inset #444;
+}
+
+.arcade3d-screen img {
+    width: 140px;
+    height: auto;
+}
+
+.arcade3d-controls {
+    width: 100px;
+    height: 40px;
+    background: #ff004d;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #ff004d;
+}
+
+@keyframes arcade3d-spin {
+    from {
+        transform: rotateX(20deg) rotateY(0deg);
+    }
+
+    to {
+        transform: rotateX(20deg) rotateY(360deg);
+    }
+}
+
+/*CSS per animare il cubo ? di Super Mario */
+
+.question3d-wrapper {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.question3d-cube {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: transform 0.2s ease;
+}
+
+.question3d-cube:hover {
+    animation: question3d-jump 0.4s ease;
+}
+
+@keyframes question3d-jump {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) translateY(0);
+    }
+
+    30% {
+        transform: rotateX(0deg) rotateY(0deg) translateY(-20px);
+    }
+
+    60% {
+        transform: rotateX(0deg) rotateY(0deg) translateY(5px);
+    }
+
+    100% {
+        transform: rotateX(0deg) rotateY(0deg) translateY(0);
+    }
+}
+
+.question3d-face {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(#fbd000, #f39c12);
+    border: 4px solid #e67e22;
+    color: #fff;
+    font-weight: bold;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.95;
+    box-shadow: 0 0 12px #ffef82;
+}
+
+.question3d-front {
+    transform: rotateY(0deg) translateZ(60px);
+}
+
+.question3d-back {
+    transform: rotateY(180deg) translateZ(60px);
+}
+
+.question3d-right {
+    transform: rotateY(90deg) translateZ(60px);
+}
+
+.question3d-left {
+    transform: rotateY(-90deg) translateZ(60px);
+}
+
+.question3d-top {
+    transform: rotateX(90deg) translateZ(60px);
+}
+
+.question3d-bottom {
+    transform: rotateX(-90deg) translateZ(60px);
+}
+
 
 form {
     display: flex;
@@ -234,6 +407,7 @@ form {
     border-top: 4px solid #ffcc00;
     letter-spacing: 1px;
     background-repeat: repeat;
+    margin-top: 30px;
 }
 
 .pixel-icon {
